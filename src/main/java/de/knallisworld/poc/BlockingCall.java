@@ -24,6 +24,6 @@ public class BlockingCall implements Callable<ChannelFuture> {
 			System.err.println(threadName + ": Failed: " + e.getMessage());
 		}
 		System.out.println(threadName + ": Finished");
-		return ctx.write("Task finished at " + new Date());
+		return ctx.writeAndFlush("Task finished at " + new Date());
 	}
 }
